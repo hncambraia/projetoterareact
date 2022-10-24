@@ -18,7 +18,7 @@ export default function AppHeader(props) {
     navigate("/");
   };
   const handlePostClick = (event) => {
-    navigate("/UserPostForm/");
+    navigate("/feed/new/");
   };
   return (
     <nav className="navbar navbar-expand-lg bg-light">

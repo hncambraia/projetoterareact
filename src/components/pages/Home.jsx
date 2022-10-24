@@ -32,7 +32,7 @@ export default function Home() {
       });
   };
   const handleCadastroClick = (event) => {
-    navigate("/Users/");
+    navigate("/NewUser/");
   };
 
   return (
