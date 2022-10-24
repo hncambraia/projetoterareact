@@ -149,7 +149,8 @@ label {
 }
 
 .users__list-item-photo img {
-  max-width: 80px;
+  max-width: 200px;
+  width: 150px;
 }
 
 .users__list-item-name {

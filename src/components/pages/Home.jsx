@@ -5,9 +5,31 @@ import logo from "../../images/logo.png";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [usuarioDigitado, setUsuario] = React.useState("");
+  const [senhaDigitado, setSenha] = React.useState("");
+  const [idUsuarioLogado, setUsuarioLogado] = React.useState("");
 
   const handleLoginClick = (event) => {
-    navigate("/Feed/");
+    event.preventDefault();
+    fetch("http://localhost:8090/usuarios/validausuario/", {
+      method: "POST",
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({ login: usuarioDigitado, senha: senhaDigitado }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const status = data.status;
+        const mensagem = data.mensagem;
+        const id = data.id;
+        console.log(data);
+        if (status) {
+          setUsuarioLogado(idUsuarioLogado);
+          navigate(`/Feed/`);
+          localStorage.setItem("dataKey", id);
+        } else {
+          alert(mensagem);
+        }
+      });
   };
   const handleCadastroClick = (event) => {
     navigate("/Users/");
@@ -24,12 +46,24 @@ export default function Home() {
 
       <div id="loginCaixa">
         <label htmlFor="login">Login</label>
-        <input id="login" type="text" />
+        <input
+          id="login"
+          type="text"
+          onChange={(event) => setUsuario(event.target.value)}
+          name="login"
+          value={usuarioDigitado}
+        />
       </div>
 
       <div id="senhaCaixa">
         <label htmlFor="senha">Senha</label>
-        <input id="senha" type="password" />
+        <input
+          id="senha"
+          type="password"
+          onChange={(event) => setSenha(event.target.value)}
+          name="senha"
+          value={senhaDigitado}
+        />
       </div>
 
       <button onClick={handleLoginClick} id="botao">

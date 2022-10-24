@@ -17,6 +17,9 @@ export default function AppHeader(props) {
   const handleLogoutClick = (event) => {
     navigate("/");
   };
+  const handlePostClick = (event) => {
+    navigate("/UserPostForm/");
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -73,6 +76,10 @@ export default function AppHeader(props) {
 
           <button onclick="pesquisaFeed()" className="btn btn-outline-search">
             Pesquisar
+          </button>
+
+          <button onClick={handlePostClick} className="btn btn-outline-search">
+            Novo Post
           </button>
         </div>
       </div>
