@@ -20,12 +20,12 @@ export default function Home() {
       .then((data) => {
         const status = data.status;
         const mensagem = data.mensagem;
-        const id = data.id;
+
         console.log(data);
         if (status) {
           setUsuarioLogado(idUsuarioLogado);
           navigate(`/Feed/`);
-          localStorage.setItem("dataKey", id);
+          localStorage.setItem("dataKey", idUsuarioLogado);
         } else {
           alert(mensagem);
         }

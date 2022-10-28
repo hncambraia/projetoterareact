@@ -41,12 +41,24 @@ export default function PostListItem(props) {
               <div className="user-blog__post-content">
                 <p>
                   <b>Ingredientes</b>
-                  <ul>{trataListas(props.ingrediente.split("\n"))}</ul>
+                  <ul>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: trataListas(props.ingrediente.split("\n")),
+                      }}
+                    ></div>
+                  </ul>
                 </p>
                 <br></br>
                 <p>
                   <b>Modo de Preparo</b>
-                  <ol>{trataListas(props.modoPreparo.split("\n"))}</ol>
+                  <ol>
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: trataListas(props.modoPreparo.split("\n")),
+                      }}
+                    ></div>
+                  </ol>
                 </p>
               </div>
             )}

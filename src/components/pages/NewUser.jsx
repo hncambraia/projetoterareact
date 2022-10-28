@@ -34,12 +34,13 @@ export default function UserPostForm() {
     <AppLoading />
   ) : (
     <Default>
-      <div className="create-post">
+      <div className="form-control">
         <h4>Novo Usuário</h4>
 
         <form onSubmit={handleFormSubmit} className="create-post__form">
           <div className="create-post__form-name">
             <label htmlFor="name">Login</label>
+
             <input
               onChange={(event) => setLogin(event.target.value)}
               type="text"

@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
-import Avatar from "../atoms/Avatar";
-
 function UserListItem(props) {
   return (
     <div>
-      <div className="users__list-item-photo">
-        <Avatar src={props.src} alt="" />
-      </div>
-      <div className="users__list-item-name">
-        <h3>{props.name}</h3>
-      </div>
-      <div className="users__list-item-name">{props.bio}</div>
+      <main className="container">
+        <div className="row g-5">
+          <div className="users__list-item-name">
+            <img src={props.imagem} height="200px" alt="" />
+            <h3>{props.name}</h3>
+          </div>
+
+          <div className="users__list-item-name">Email: {props.email}</div>
+          <div className="users__list-item-name">Bio: {props.bio}</div>
+        </div>
+      </main>
     </div>
   );
 }
