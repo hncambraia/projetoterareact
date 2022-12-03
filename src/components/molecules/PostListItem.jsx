@@ -26,12 +26,12 @@ export default function PostListItem(props) {
       <div className="row g-5">
         <div>
           <div onClick={handleShowContent} className="user-blog__posts-item">
-            <div className="user-blog__posts-item-photo">
+            <div className="user-blog__posts-item-photo" align="center">
               <rect width="100%" height="100%"></rect>
               <img src={props.image} height="400px" alt="" />
             </div>
 
-            <div className="card-body">
+            <div className="card-body" align="center">
               <h5 className="card-title"> {props.title} </h5>
               <p className="card-text"> </p>
               <p className="card-text"> </p>
@@ -41,24 +41,20 @@ export default function PostListItem(props) {
               <div className="user-blog__post-content">
                 <p>
                   <b>Ingredientes</b>
-                  <ul>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: trataListas(props.ingrediente.split("\n")),
-                      }}
-                    ></div>
-                  </ul>
+                  <ul
+                    dangerouslySetInnerHTML={{
+                      __html: trataListas(props.ingrediente.split("\n")),
+                    }}
+                  ></ul>
                 </p>
                 <br></br>
                 <p>
                   <b>Modo de Preparo</b>
-                  <ol>
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: trataListas(props.modoPreparo.split("\n")),
-                      }}
-                    ></div>
-                  </ol>
+                  <ol
+                    dangerouslySetInnerHTML={{
+                      __html: trataListas(props.modoPreparo.split("\n")),
+                    }}
+                  ></ol>
                 </p>
               </div>
             )}

@@ -1,12 +1,22 @@
 import React from "react";
 
 import PostListItem from "./PostListItem";
+import NewsListWrapper from "./NewsListWrapper";
+import NewsListItem from "./NewsListItem";
 
 export default function PostListWrapper(props) {
+  function listNews() {
+    fetch("http://localhost:5000/news/")
+      .then((response) => response.json())
+      .then((data) => {
+        data.map((data) => data.titulo);
+      });
+  }
+
   return (
     <main className="container">
       <div className="row">
-        <div className="col-9" align="center">
+        <div className="col-9">
           <div className="user-blog__posts">
             {props.posts.map((post) => (
               <PostListItem

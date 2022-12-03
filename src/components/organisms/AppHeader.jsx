@@ -20,6 +20,12 @@ export default function AppHeader(props) {
   const handlePostClick = (event) => {
     navigate("/feed/new/");
   };
+  const handleNews = (event) => {
+    navigate("/news/");
+  };
+  const handleNewNews = (event) => {
+    navigate("/newnews/");
+  };
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
@@ -30,7 +36,6 @@ export default function AppHeader(props) {
           width="150"
           height="auto"
           className="rounded mx-auto d-block center"
-          onclick="gotoIndex()"
         />
         <button
           className="navbar-toggler"
@@ -74,12 +79,16 @@ export default function AppHeader(props) {
             id="pesquisaFeed"
           />
 
-          <button onclick="pesquisaFeed()" className="btn btn-outline-search">
-            Pesquisar
-          </button>
+          <button className="btn btn-outline-search">Pesquisar</button>
 
           <button onClick={handlePostClick} className="btn btn-outline-search">
             Novo Post
+          </button>
+          <button onClick={handleNews} className="btn btn-outline-search">
+            Notícias
+          </button>
+          <button onClick={handleNewNews} className="btn btn-outline-search">
+            Nova Notícia
           </button>
         </div>
       </div>

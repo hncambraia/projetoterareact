@@ -8,6 +8,8 @@ import "./styles/login.css";
 import "./styles/feed.css";
 import "./styles/profile.css";
 import NewUser from "./components/pages/NewUser";
+import News from "./components/pages/News";
+import NewNews from "./components/pages/NewNews";
 import UserPostForm from "./components/pages/UserPostForm";
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
         <Route path="/users" element={<Users />} />
         <Route path="/newuser" element={<NewUser />} />
         <Route path="/feed/new" element={<UserPostForm />} />
+        <Route path="/news/" element={<News />} />
+        <Route path="/newnews/" element={<NewNews />} />
       </Routes>
     </BrowserRouter>
   );
