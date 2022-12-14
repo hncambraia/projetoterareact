@@ -12,7 +12,7 @@ export default function Feed() {
   const [idUsuarioLogado, setUsuarioLogado] = React.useState("");
 
   React.useEffect(() => {
-    fetch("http://localhost:8090/feed/")
+    fetch("https://8b6j627v31.execute-api.us-east-1.amazonaws.com/feed")
       .then((response) => response.json())
       .then((data) => {
         setPosts(data);

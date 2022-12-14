@@ -11,20 +11,24 @@ export default function Home() {
 
   const handleLoginClick = (event) => {
     event.preventDefault();
-    fetch("http://localhost:8090/usuarios/validausuario/", {
-      method: "POST",
-      headers: { "Content-type": "application/json; charset=UTF-8" },
-      body: JSON.stringify({ login: usuarioDigitado, senha: senhaDigitado }),
-    })
+    fetch(
+      "https://8b6j627v31.execute-api.us-east-1.amazonaws.com/validausuario",
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({ login: usuarioDigitado, senha: senhaDigitado }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         const status = data.status;
-        const mensagem = data.mensagem;
-
+        const mensagem = data.message;
+        const idUsuarioLogado = data.id;
         console.log(data);
         if (status) {
           setUsuarioLogado(idUsuarioLogado);
           navigate(`/Feed/`);
+
           localStorage.setItem("dataKey", idUsuarioLogado);
         } else {
           alert(mensagem);

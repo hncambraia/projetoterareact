@@ -11,7 +11,7 @@ export default function NewNewsForm() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:5000/news/", {
+    fetch("https://8b6j627v31.execute-api.us-east-1.amazonaws.com/news", {
       method: "POST",
       headers: { "Content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify({ titulo, link }),

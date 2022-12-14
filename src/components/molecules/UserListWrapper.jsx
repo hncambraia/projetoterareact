@@ -9,10 +9,10 @@ function UserListWrapper(props) {
           .sort((a, b) => a.nome.localeCompare(b.nome))
           .map((user) => (
             <UserListItem
-              key={user._id}
+              key={user.id}
               name={`${user.nome} (${user.login})`}
               src={user.avatar}
-              id={user._id}
+              id={user.id}
               bio={user.bio}
               email={user.email}
               imagem={user.imagem}

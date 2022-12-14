@@ -6,7 +6,7 @@ import NewsListItem from "./NewsListItem";
 
 export default function PostListWrapper(props) {
   function listNews() {
-    fetch("http://localhost:5000/news/")
+    fetch("https://8b6j627v31.execute-api.us-east-1.amazonaws.com/news")
       .then((response) => response.json())
       .then((data) => {
         data.map((data) => data.titulo);
@@ -20,7 +20,7 @@ export default function PostListWrapper(props) {
           <div className="user-blog__posts">
             {props.posts.map((post) => (
               <PostListItem
-                key={post._id}
+                key={post.id}
                 image={post.imagem}
                 title={post.titulo}
                 ingrediente={post.ingredientes}

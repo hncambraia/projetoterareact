@@ -14,7 +14,7 @@ export default function UserPostForm() {
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
-    fetch("http://localhost:8090/feed/create", {
+    fetch("https://8b6j627v31.execute-api.us-east-1.amazonaws.com/feed", {
       method: "POST",
       headers: { "Content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify({ titulo, ingredientes, modopreparo, modopreparo }),

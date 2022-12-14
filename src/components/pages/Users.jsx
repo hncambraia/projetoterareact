@@ -9,7 +9,9 @@ export default function Users() {
   const [isLoading, setIsLoading] = React.useState(true);
   const userLogado = localStorage.getItem("dataKey");
   React.useEffect(() => {
-    fetch(`http://localhost:8090/usuarios/${userLogado}`)
+    fetch(
+      `https://8b6j627v31.execute-api.us-east-1.amazonaws.com/users/${userLogado}`
+    )
       .then((response) => response.json())
       .then((data) => {
         setUsers(data);

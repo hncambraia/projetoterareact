@@ -10,7 +10,7 @@ export default function NewsListItem(props) {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/news/${id}`, {
+    fetch(`https://8b6j627v31.execute-api.us-east-1.amazonaws.com/news/${id}`, {
       method: "DELETE",
     }).then(() => alert("Excluido com sucesso"));
   };
